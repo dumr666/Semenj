@@ -7,13 +7,12 @@ using Semenj.Models;
 
 namespace Semenj.Models
 {
-    public class Category
+    public class ProductSort
     {
-        public Category() { }
-        [Key]
-        public Guid Id { get; set; }
+        public ProductSort() { }
+        
+        public Category Category { get; set; }
         public string Name { get; set; }
-        public List<ProductSort> ProductSorts { get; set; }
         
     }
 }
