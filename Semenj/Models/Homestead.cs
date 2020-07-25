@@ -16,8 +16,13 @@ namespace Semenj.Models
         public string Address { get; set; }
         public int PostCode { get; set; }
         public int City { get; set; }
+        public string WebPageAddress { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
         public float Rating { get; set; }
         public List<User> Users { get; set; }
+        public List<User> Admins { get; set; }
+        public List<Product> Products { get; set; }
+
+        
     }
 }
