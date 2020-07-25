@@ -17,7 +17,7 @@ namespace Semenj.Models
         public int PostCode { get; set; }
         public int City { get; set; }
         public string WebPageAddress { get; set; }
-        public DateTime Created { get; set; } = DateTime.Now;
+        public DateTime Created { get; set; } = DateTime.UtcNow;
         public float Rating { get; set; }
         public List<User> Users { get; set; }
         public List<User> Admins { get; set; }

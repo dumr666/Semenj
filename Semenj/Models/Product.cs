@@ -20,7 +20,7 @@ namespace Semenj.Models
         public string CultivationMethod { get; set; }
         public float Quantity { get; set; }
         public float Rating { get; set; }
-        public DateTime DateAdded { get; set; } = DateTime.Now;
+        public DateTime DateAdded { get; set; } = DateTime.UtcNow;
         public float Price { get; set; }
         public string PriceFormat { get; set; }
 
