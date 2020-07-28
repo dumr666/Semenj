@@ -26,6 +26,7 @@ namespace Semenj.Models
         public DateTime BirthDate { get; set; }
         public float Ratimg { get; set; }
         public DateTime Created { get; set; } = DateTime.UtcNow;
+        public Guid HomesteadId { get; set; }
         public Homestead Homestead { get; set; }
         public List<Product> Products { get; set; }
     }

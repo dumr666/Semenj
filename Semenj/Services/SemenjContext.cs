@@ -30,6 +30,12 @@ namespace Semenj.Services
                 .Entity<User>()
                 .Property(x => x.Id)
                 .ValueGeneratedOnAdd();
+
+            modelBuilder
+                .Entity<User>()
+                .HasOne(x => x.Homestead)
+                .WithMany(x => x.Users)
+                .HasForeignKey(x => x.HomesteadId);
             
             /*
              *  Product table
@@ -46,7 +52,30 @@ namespace Semenj.Services
                 .WithMany(x => x.Products)
                 .HasForeignKey(x => x.SellerId);
 
+            /*
+             * Homestead
+             */
 
+            modelBuilder
+                .Entity<Homestead>()
+                .Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
+            modelBuilder
+                .Entity<Homestead>()
+                .HasMany(x => x.Users)
+                .WithOne(x => x.Homestead);
+
+            modelBuilder
+                .Entity<Homestead>()
+                .HasMany(x => x.Admins)
+                .WithOne(x => x.Homestead);
+
+            modelBuilder
+                .Entity<Homestead>()
+                .HasMany(x => x.Products)
+                .WithOne(x => x.Homestead)
+                .HasForeignKey(x => x.HomesteadId);
             
         }
     }
