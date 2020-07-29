@@ -8,7 +8,21 @@ namespace SemenjAPI.Models
 {
     public class Product
     {
+        // Empty constructor -> EF
         public Product() { }
+
+        public Product(User seller, Homestead homestead, string name, ProductSort productSort, string cultivationMethod, float quantity, float rating, float price, string priceFormat)
+        {
+            Seller = seller;
+            Homestead = homestead;
+            Name = name;
+            ProductSort = productSort;
+            CultivationMethod = cultivationMethod;
+            Quantity = quantity;
+            Rating = rating;
+            Price = price;
+            PriceFormat = priceFormat;
+        }
 
         [Key]
         public Guid Id { get; set; }

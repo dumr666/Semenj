@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SemenjAPI.Models
 {
     public class Category
-    {
+    {  
+        // Empty constructor -> EF
         public Category() { }
+
+        public Category(string name, List<ProductSort> productSorts)
+        {
+            Name = name;
+            productSorts = ProductSorts;
+        }
+
+        // Properties
         [Key]
         public Guid Id { get; set; }
         public string Name { get; set; }

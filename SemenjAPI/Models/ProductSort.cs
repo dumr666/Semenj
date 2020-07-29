@@ -8,8 +8,18 @@ namespace SemenjAPI.Models
 {
     public class ProductSort
     {
-        public ProductSort() { }
 
+        // Empty constructor -> EF
+        public ProductSort() { }
+        public ProductSort(Category category, string name, string description, List<Product> products)
+        {
+            Category = category;
+            Name = name;
+            Description = description;
+            Products = products;
+        }
+
+        // Properties
         public Guid Id { get; set; }
         public Category Category { get; set; }
         public string Name { get; set; }

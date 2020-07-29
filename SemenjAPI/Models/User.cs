@@ -8,7 +8,26 @@ namespace SemenjAPI.Models
 {
     public class User
     {
+        // Empty constructor -> EF
         public User() { }
+        public User(string name, string surname, string username, string password, string emailAddress, string phoneNumber, 
+            string mobileNumber, string address, int postCode, string city, DateTime birthDate, float rating, Homestead homestead, List<Product> products )
+        {
+            Name = name;
+            Surname = surname;
+            Password = password;
+            EmailAddress = emailAddress;
+            PhoneNumber = phoneNumber;
+            MobileNumber = mobileNumber;
+            Address = address;
+            PostCode = postCode;
+            City = city;
+            BirthDate = birthDate;
+            Rating = rating;
+            Homestead = homestead;
+            Products = products;
+        }
+
 
         [Key]
         public Guid Id { get; set; }
@@ -23,7 +42,7 @@ namespace SemenjAPI.Models
         public int PostCode { get; set; }
         public string City { get; set; }
         public DateTime BirthDate { get; set; }
-        public float Ratimg { get; set; }
+        public float Rating { get; set; }
         public DateTime Created { get; set; } = DateTime.UtcNow;
         public Guid HomesteadId { get; set; }
         public Homestead Homestead { get; set; }
