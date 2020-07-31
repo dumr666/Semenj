@@ -26,7 +26,7 @@ namespace SemenjAPI.Models
 
         [Key]
         public Guid Id { get; set; }
-        public Guid SellerId { get; set; }
+        //public Guid SellerId { get; set; }
         public User Seller { get; set; }
         public Guid HomesteadId { get; set; }
         public Homestead Homestead { get; set; }

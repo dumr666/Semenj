@@ -30,7 +30,7 @@ namespace SemenjAPI.Models
 
 
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = new Guid();
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Username { get; set; }

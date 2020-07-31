@@ -12,7 +12,7 @@ namespace SemenjAPI.Models
         public Category(string name, List<ProductSort> productSorts)
         {
             Name = name;
-            productSorts = ProductSorts;
+            ProductSorts = productSorts;
         }
 
         // Properties
