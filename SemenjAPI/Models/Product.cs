@@ -11,13 +11,15 @@ namespace SemenjAPI.Models
         // Empty constructor -> EF
         public Product() { }
 
-        public Product(User seller, Homestead homestead, string name, ProductSort productSort, string cultivationMethod, float quantity, float rating, float price, string priceFormat)
+        public Product(User seller, Guid sellerId, string name, 
+            string cultivationMethod, int category, float quantity, float rating, 
+            float price, string priceFormat)
         {
             Seller = seller;
-            Homestead = homestead;
+            SellerId = sellerId;
             Name = name;
-            ProductSort = productSort;
             CultivationMethod = cultivationMethod;
+            Category = category;
             Quantity = quantity;
             Rating = rating;
             Price = price;
@@ -25,14 +27,13 @@ namespace SemenjAPI.Models
         }
 
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = new Guid();
         //public Guid SellerId { get; set; }
+        public Guid SellerId { get; set; }
         public User Seller { get; set; }
-        public Guid HomesteadId { get; set; }
-        public Homestead Homestead { get; set; }
         public string Name { get; set; }
-        public ProductSort ProductSort { get; set; }
         public string CultivationMethod { get; set; }
+        public int Category { get; set; }
         public float Quantity { get; set; }
         public float Rating { get; set; }
         public DateTime DateAdded { get; set; } = DateTime.UtcNow;
