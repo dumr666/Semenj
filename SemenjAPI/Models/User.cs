@@ -10,12 +10,14 @@ namespace SemenjAPI.Models
     {
         // Empty constructor -> EF
         public User() { }
-        public User(string name, string surname, string username, string password, string emailAddress, string phoneNumber, 
-            string mobileNumber, string address, int postCode, string city, DateTime birthDate, float rating, List<Product> products )
+        public User(string name, string surname, string username, string password,
+            string emailAddress, string phoneNumber, string mobileNumber, 
+            string address, int postCode, string city, DateTime birthDate)
         {
             Name = name;
             Surname = surname;
             Password = password;
+            Username = username;
             EmailAddress = emailAddress;
             PhoneNumber = phoneNumber;
             MobileNumber = mobileNumber;
@@ -23,8 +25,6 @@ namespace SemenjAPI.Models
             PostCode = postCode;
             City = city;
             BirthDate = birthDate;
-            Rating = rating;
-            Products = products;
         }
 
 
