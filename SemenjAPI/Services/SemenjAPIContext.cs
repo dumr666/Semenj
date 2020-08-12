@@ -16,6 +16,7 @@ namespace SemenjAPI.Services
         // Expose data to API
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Session> Sessions { get; set; }
 
         // Database table relations
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -46,6 +47,18 @@ namespace SemenjAPI.Services
                 .WithMany(x => x.Products)
                 .HasForeignKey(x => x.SellerId);
 
+            /*
+             *  Session table
+             */
+            modelBuilder
+                .Entity<Session>()
+                .Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
+            modelBuilder
+                .Entity<Session>()
+                .HasOne(x => x.User)
+                .WithOne(x => x.Session);
         }
     }
 }

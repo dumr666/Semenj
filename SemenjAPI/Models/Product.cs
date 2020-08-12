@@ -12,7 +12,7 @@ namespace SemenjAPI.Models
         public Product() { }
 
         public Product(User seller, Guid sellerId, string name, 
-            string cultivationMethod, int category, float quantity, float rating, 
+            string cultivationMethod, int category, float quantity, 
             float price, string priceFormat)
         {
             Seller = seller;
@@ -21,7 +21,6 @@ namespace SemenjAPI.Models
             CultivationMethod = cultivationMethod;
             Category = category;
             Quantity = quantity;
-            Rating = rating;
             Price = price;
             PriceFormat = priceFormat;
         }

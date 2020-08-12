@@ -12,4 +12,14 @@ namespace SemenjAPI.Interfaces
     {
         Task<User> CreateUser(UserDto userDto);
     }
+
+    public interface IProductService
+    {
+        Task<Product> CreateProduct(ProductDto productDto, User productSeller);
+    }
+
+    public interface ISessionService
+    {
+
+    }
 }

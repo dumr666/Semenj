@@ -44,5 +44,7 @@ namespace SemenjAPI.Models
         public float Rating { get; set; }
         public DateTime Created { get; set; } = DateTime.UtcNow;
         public List<Product> Products { get; set; }
+        public Guid SessionId { get; set; }
+        public Session Session { get; set; }
     }
 }
